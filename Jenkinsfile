@@ -6,12 +6,6 @@ pipeline{
             steps{
                 sh 'mvn clean package'
             }
-            post{
-                SUCCESS{
-                    echo 'Archiving the artifacts'
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
-            }
         }
         stage ('Deloy to Tomcat server'){
             steps{

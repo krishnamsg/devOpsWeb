@@ -24,7 +24,7 @@ stages{
             parallel{
                 stage ("Deploy to Staging"){
                     steps {
-                       sh "sshpass -p "sagar123" scp -v -o StrictHostKeyChecking=no **/*.war root@${params.staging_server}:/opt/tomcat/webapps/"
+                       sh "scp -p "sagar123" -v -o StrictHostKeyChecking=no **/*.war root@${params.staging_server}:/opt/tomcat/webapps/"
                     }
                 }
             }

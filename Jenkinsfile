@@ -24,7 +24,7 @@ stages{
             parallel{
                 stage ("Deploy to Staging"){
                     steps {
-                        sudo cp -r **/*.war /opt/tomcat/webapps/
+                       sh "scp -v -o StrictHostKeyChecking=no **/*.war root@${params.staging_server}:/opt/tomcat/webapps/"
                     }
                 }
             }

@@ -24,7 +24,7 @@ stages{
             parallel{
                 stage ("Deploy to Staging"){
                     steps {
-                        sh "sudo cp -r **/*.war /opt/tomcat/webapps/"
+                        sudo cp -r **/*.war /opt/tomcat/webapps/
                     }
                 }
             }
